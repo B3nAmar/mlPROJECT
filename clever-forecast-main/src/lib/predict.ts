@@ -17,11 +17,14 @@ export interface PredictionResult {
  * Le body envoyé est un JSON avec les champs de PredictionInput.
  * La réponse attendue doit contenir un champ "profit" (number).
  */
+// TODO: Replace with your actual deployed backend URL from Render
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 export async function predictProfit(input: PredictionInput): Promise<number> {
   try {
     // 1. On tente l'appel à l'API
     // Note : Vérifiez bien si c'est /predict ou /predict/ au lieu de /docs
-    const res = await fetch("http://127.0.0.1:8000/predict", { 
+    const res = await fetch(`${API_URL}/predict`, { 
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -4,3 +4,5 @@ matplotlib
 seaborn
 fastapi
 uvicorn[standard]
+joblib
+pydantic

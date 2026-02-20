@@ -6,7 +6,7 @@ __pycache__/
 node_modules/
 dist/
 .env
-*.pkl
+# *.pkl  # COMMENTED: We need model files for deployment
 .pytest_cache/
 .coverage
 .idea/
